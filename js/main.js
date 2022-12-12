@@ -31,3 +31,19 @@ const numRepeated = function (arr) {
 console.log(numRepeated([1, 22, 5, 17, 10, 5, 40, 5]));
 console.log(numRepeated([7, 41, 5, 7, 10, 13, 2]));
 console.log(numRepeated([1, 22, 5, 14, 24, 31, 27, 15, 105]));
+
+function randomIndex(currentIndex) {
+  return Math.floor(Math.random() * currentIndex);
+}
+const mixArray = function (arr) {
+  let currentIndex = arr.length;
+  while (currentIndex != 0) {
+    const random = randomIndex(currentIndex);
+    console.log({ random, currentIndex });
+    currentIndex--;
+    [arr[currentIndex], arr[random]] = [arr[random], arr[currentIndex]];
+  }
+
+  return arr;
+};
+console.log(mixArray([1, 2, 5, 14, 24, 31, 50, 105]));
